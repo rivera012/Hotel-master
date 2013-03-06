@@ -1,0 +1,272 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Aplic. Web de jQuery Mobile</title>
+<link href="css/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="phonegap.js" type="text/javascript"></script>
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="js/API/eventos.js" type="text/javascript"></script>
+<script src="js/API/notificaciones.js" type="text/javascript"></script>
+<script src="js/API/ajax.js" type="text/javascript"></script>
+<script src="js/API/captura.js" type="text/javascript"></script>
+<script src="js/API/subir_archivos.js" type="text/javascript"></script>
+<script src="js/API/dispositivo.js" type="text/javascript"></script>
+<script src="js/API/almacenamiento.js" type="text/javascript"></script>
+
+
+
+
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Reservaciones</h1>
+	</div>
+	<div data-role="content" >	
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#nr1">Nuevo Registro</a></li>
+            <li><a href="#historial">Registros Anteriores </a></li>
+			<li><a href="#priv">Privacidad</a></li>
+		</ul>		
+	</div>
+	<div data-role="footer" data-position="fixed">
+    <a href="#nosotros" data-role="button" data-theme="b" data-transition="slideup" >Nosotros</a>
+		<span style=" font-size:8pt;">
+        Todos los Derechos Reservados &copy;
+        </span>
+         
+	</div>
+</div>
+
+<div data-role="page" id="nosotros">
+	
+    <div data-role="header">
+    <a data-role="button" data-theme="e" class="ui-btn-right" data-icon="delete" data-iconpos="notext" data-tra data-direction="reverse" data-rel="back" href="">Cerrar</a>
+		<h1>Nosotros</h1>
+        
+	</div>
+	<div data-role="content" style="text-align:justify;">	
+		Contenido		
+	</div>
+</div>
+
+<div data-role="page" id="priv">
+	<div data-role="header">
+    <a data-role="button" data-theme="e" class="ui-btn-left" data-icon="arrow-l" data-tra data-direction="reverse" data-rel="back" href="">Atras</a>
+		<h1>Privacidad</h1>
+	</div>
+	<div data-role="content" style="text-align:justify">	
+		If you need to support Internet Explorer, you can fall back on jQuery. Note that conditional comments are no longer supported starting on IE 10, so we recommend the following document.write approach:	
+	</div>
+	
+</div>
+
+<div data-role="page" id="historial">
+	<div data-role="header">
+		<h1>Historial</h1>
+	</div>
+	<div data-role="content">	
+		<div data-role="collapsible-set">
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>
+                    27-02-2013
+                </h3>
+               <strong>Habitaciones:</strong>X<br>
+               <strong>Personas:</strong>Y<br>
+               <strong>Estancia:</strong> <input name="" id="textinput2" placeholder="" value="" type="week">
+            </div>
+            
+        </div>
+	</div>
+	<div data-theme="a" data-role="footer" data-position="fixed">
+        <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li>
+                    <a  data-transition="fade" data-theme="" data-icon="grid" href="#page">
+                        Principal
+                    </a>
+                </li>
+                <li>
+                    <a href="#nr1" data-transition="flip" data-icon="plus">
+                        Reservar
+                    </a>
+                </li>
+                <li>
+                    <a href="#priv" data-transition="pop"  data-icon="info">
+                        Privacidad
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="nr1">
+	<div data-role="header">
+		<h1>Reservar</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="a">
+        	<li data-role="list-divider" role="heading" >
+            	Tipo de Habitación
+            </li>
+            <li>
+            	<a href="#nr2" data-transition="fade">Habitación Sencilla</a>
+            </li>
+            <li>
+            <a >Habitación Doble</a>
+            </li>
+            <li>
+            <a >Suite</a>
+            </li>
+        </ul>		
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li>
+                    <a  data-transition="fade" data-theme="e"  data-rel="back" href="">
+                        Cancelar
+                    </a>
+                </li>
+                <li>
+                    <a  data-transition="slide" data-theme="a"  href="#priv">
+                        Privacidad
+                    </a>
+                </li>
+            </ul>
+        </div>        
+	</div>
+</div>
+
+<div data-role="page" id="nr2">
+	<div data-role="header">
+		<h1>Reservar Habitación Sencilla</h1>
+	</div>
+	<div data-role="content">
+    	<ul data-role="listview" data-inset="true" data-dividertheme="a">
+        	<li data-role="list-divider" role="heading">
+            	Datos Extras
+            </li>
+            	
+            <li>
+            	Habitaciones:<br>
+                <select id="reg">
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+              </select>
+            </li>
+            <li>
+            	Personas:<br>
+                <select id="regper">
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+              </select>
+            </li>
+            <li>
+            	Días:<br>
+                <select id="regest">
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+              </select>
+            </li>
+            
+        </ul>	
+        <a data-role="button" data-theme="b" id="regenv" href="#nrconfirm">Reservar</a>
+		
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li>
+                    <a  data-transition="fade" data-theme="e"  data-rel="back" href="">
+                        Cancelar
+                    </a>
+                </li>
+                <li>
+                    <a  data-transition="slide" data-theme="a"  href="#priv">
+                        Privacidad
+                    </a>
+                </li>
+            </ul>
+        </div>        
+	</div>
+</div>
+
+<div data-role="page" id="nrconfirm">
+	<div data-role="header">
+		<h1>Confirmación</h1>
+	</div>
+	<div data-role="content">
+    	<ul data-role="listview" data-inset="true">
+        	<li >
+            	Si o No
+            </li>
+        </ul>	
+       <a data-role="button" data-theme="b" id="regenv" href="#login">Aceptar</a>
+		
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li>
+                    <a  data-transition="fade" data-theme="e"  data-rel="back" href="">
+                        Cancelar
+                    </a>
+                </li>
+                <li>
+                    <a  data-transition="slide" data-theme="a"  href="#priv">
+                        Privacidad
+                    </a>
+                </li>
+            </ul>
+        </div>        
+	</div>
+</div>
+
+<div data-role="page" id="login">
+	<div data-role="content">
+    	<ul data-role="listview" data-inset="true" data-dividertheme="a">
+        	<li data-role="list-divider" role="heading">
+            	Registro
+            </li>
+            	
+            <li >
+            	<input type="text" id="nombre" placeholder="Nombre" required>
+            </li>
+            <li >
+            	<select id="origen">
+                	<option value="" disabled selected>Lugar de Origen</option>
+                    <option value="puebla">Puebla</option>
+                    <option value="df">DF</option>
+                    <option value="tlaxcala">Tlaxcala</option>
+                </select>
+            </li>
+            <li >
+            	<input type="email" id="email" placeholder="Email">
+            </li>
+            <li >
+            	<input type="tel" id="telefono" placeholder="Teléfono">
+            </li>
+            <li>
+            	<a id="foto">Tomar Foto</a>
+            </li>
+            <a id="enviar" data-role="button" data-theme="c">Registrar</a>
+        </ul>
+		
+	</div>
+	
+</div>
+
+
+
+</body>
+</html>
